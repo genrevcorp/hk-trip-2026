@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HONG KONG ✦ 07.24–07.28</title>
+<style>
+:root{
+  --paper:#F1EFEA; --lilac:#C9B9DE; --lilac-lt:#DED3EA; --lilac-pale:#EFE9F5;
+  --plum:#5E4880; --ink:#1C1720; --pink:#F0A6C9; --pink-dk:#D9749F;
+}
+*{box-sizing:border-box;}
+/* 刻意只做一套配色：Y2K 奶油淡紫。鎖定淺色，避免深色模式的
+   瀏覽器預設樣式蓋掉輸入框。 */
+:root{color-scheme:light;}
+html{scroll-behavior:smooth;background:var(--paper);}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+.vc:focus-visible,.cbtn:focus-visible,button.btn:focus-visible,.nav a:focus-visible,
+input.tin:focus-visible,textarea.tin:focus-visible{outline:3px solid var(--plum);outline-offset:2px;}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"PingFang TC","Hiragino Sans TC","Microsoft JhengHei",-apple-system,sans-serif;
+  line-height:1.7;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 90px;}
+.disp{font-family:"Helvetica Neue","Arial Black",Helvetica,Arial,sans-serif;font-weight:900;letter-spacing:-.04em;text-transform:uppercase;}
+
+/* HERO */
+.hero{position:relative;padding:64px 0 40px;text-align:center;overflow:hidden;}
+.ghost{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;pointer-events:none;user-select:none;}
+.ghost div{
+  font-family:"Helvetica Neue","Arial Black",Helvetica,sans-serif;font-weight:900;
+  font-size:clamp(50px,13vw,120px);line-height:.82;letter-spacing:-.05em;
+  color:var(--lilac-lt);white-space:nowrap;text-align:center;
+}
+.hero-in{position:relative;z-index:2;}
+.chrome{
+  font-family:"Helvetica Neue","Arial Black",Helvetica,sans-serif;font-weight:900;
+  font-size:clamp(56px,15vw,140px);line-height:.84;letter-spacing:-.055em;margin:0;text-transform:uppercase;
+  background:linear-gradient(158deg,#fff 0%,#F3ECF7 8%,#C9B4DE 20%,#7E68A8 30%,#4C3A6E 36%,
+    #F6EDF6 44%,#E3B9D6 52%,#A98FC4 62%,#6E5A94 70%,#F2E9F6 80%,#C3B0DB 90%,#fff 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 6px 14px rgba(94,72,128,.3)) drop-shadow(0 1px 0 rgba(255,255,255,.9));
+}
+.hero .sub{font-size:12px;letter-spacing:.42em;margin:22px 0 4px;color:var(--plum);font-weight:700;}
+.hero .sub2{font-size:12.5px;letter-spacing:.18em;color:#7A6E86;margin:0;}
+.star{position:absolute;z-index:1;color:var(--lilac);font-size:24px;}
+.s1{top:50px;left:7%;font-size:32px;color:var(--pink);}
+.s2{top:110px;right:9%;}
+.s3{bottom:60px;left:15%;font-size:17px;}
+.s4{bottom:88px;right:6%;font-size:28px;color:var(--pink);}
+
+/* NAV */
+.nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:34px;}
+.nav a{
+  text-decoration:none;color:var(--ink);font-size:12.5px;font-weight:800;letter-spacing:.06em;
+  padding:7px 15px;border-radius:999px;border:2px solid var(--ink);background:#fff;
+  box-shadow:0 3px 0 var(--lilac);
+}
+.nav a:active{transform:translateY(2px);box-shadow:0 1px 0 var(--lilac);}
+
+/* INFO */
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:16px;}
+.ic{border:2px solid var(--ink);border-radius:18px;padding:15px 17px;background:#fff;box-shadow:4px 4px 0 var(--lilac);}
+.ic h4{margin:0 0 7px;font-size:10px;letter-spacing:.2em;color:var(--plum);font-weight:800;}
+.ic .big{font-family:"Helvetica Neue","Arial Black",Helvetica,sans-serif;font-weight:900;font-size:19px;letter-spacing:-.02em;line-height:1.3;}
+.ic p{margin:4px 0 0;font-size:12px;color:#5C5468;}
+
+.tip{
+  border:2px solid var(--ink);border-radius:18px;padding:14px 18px;margin-bottom:38px;
+  background:linear-gradient(150deg,#FFF4F8,#F6E7F0);box-shadow:4px 4px 0 var(--pink);font-size:13.5px;
+}
+.tip b{color:var(--pink-dk);}
+
+/* SECTION TITLE */
+.st{margin:46px 0 18px;}
+.st .no{font-family:"Helvetica Neue","Arial Black",Helvetica,sans-serif;font-weight:900;font-size:12px;letter-spacing:.2em;color:var(--pink-dk);display:block;}
+.st h2{margin:2px 0 0;font-size:clamp(26px,7vw,44px);line-height:1;letter-spacing:-.04em;
+  font-family:"Helvetica Neue","Arial Black",Helvetica,sans-serif;font-weight:900;text-transform:uppercase;}
+.st .zh{display:block;font-size:13px;letter-spacing:.14em;color:var(--plum);font-weight:700;margin-top:5px;}
+
+/* DAY */
+.day{border:2.5px solid var(--ink);border-radius:24px;margin-bottom:20px;overflow:hidden;background:#fff;box-shadow:6px 6px 0 var(--lilac);}
+.dh{display:flex;align-items:center;gap:14px;padding:16px 20px;border-bottom:2.5px solid var(--ink);
+  background:linear-gradient(140deg,#FBF8FC,var(--lilac-pale));}
+.dnum{font-family:"Helvetica Neue","Arial Black",Helvetica,sans-serif;font-weight:900;font-size:40px;line-height:.85;letter-spacing:-.06em;
+  background:linear-gradient(155deg,#fff,#D9C9EA 30%,#8A73B4 55%,#F0E6F5 72%,#A992CC 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 3px rgba(94,72,128,.35));}
+.dh .dt{font-size:16.5px;font-weight:800;}
+.dh .zone{font-size:12px;color:#6B6178;}
+.db{padding:4px 20px 16px;}
+
+/* TIMELINE */
+.tl{list-style:none;margin:0;padding:0;}
+.tl li{display:flex;gap:13px;padding:11px 0;border-bottom:1px solid #EEEAF2;align-items:flex-start;}
+.tl li:last-child{border-bottom:none;}
+.tm{flex:0 0 54px;font-family:"Helvetica Neue",Helvetica,sans-serif;font-weight:800;font-size:13.5px;color:var(--plum);padding-top:2px;}
+.wt{flex:1;min-width:0;}
+.wt b{font-size:15.5px;font-weight:700;}
+.wt .m{display:block;font-size:12.5px;color:#7A7188;margin-top:1px;}
+.ico{flex:0 0 22px;font-size:15px;padding-top:1px;text-align:center;}
+
+/* CHECK ITEMS */
+.chk{display:flex;align-items:flex-start;gap:11px;padding:9px 0;border-bottom:1px solid #EEEAF2;cursor:pointer;}
+.chk:last-child{border-bottom:none;}
+.box{
+  flex:0 0 21px;height:21px;border:2px solid var(--ink);border-radius:7px;background:#fff;
+  margin-top:2px;position:relative;transition:background .18s;
+}
+.chk.done .box{background:linear-gradient(150deg,#fff,#D9C9EA 40%,#9C86BE);}
+.chk.done .box::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:var(--ink);}
+.chk .lbl{flex:1;font-size:14.5px;}
+.chk.done .lbl{opacity:.42;text-decoration:line-through;}
+.chk .lbl small{display:block;font-size:12px;color:#7A7188;text-decoration:none;}
+.chk.done .lbl small{opacity:.8;}
+
+.panel{border:2.5px solid var(--ink);border-radius:24px;background:#fff;padding:8px 22px 18px;box-shadow:6px 6px 0 var(--lilac);margin-bottom:18px;}
+.panel h3{
+  font-family:"Helvetica Neue","Arial Black",Helvetica,sans-serif;font-weight:900;
+  font-size:16px;letter-spacing:-.01em;margin:18px 0 4px;padding-bottom:6px;border-bottom:2px solid var(--lilac-lt);
+}
+.panel h3:first-child{margin-top:14px;}
+
+/* VOTE */
+.vote{display:flex;flex-wrap:wrap;gap:9px;padding:6px 0 4px;}
+.vc{
+  border:2px solid var(--ink);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:700;
+  background:#fff;cursor:pointer;user-select:none;display:flex;align-items:center;gap:7px;
+  box-shadow:0 3px 0 var(--lilac-lt);transition:transform .12s;
+}
+.vc:active{transform:translateY(2px);box-shadow:0 1px 0 var(--lilac-lt);}
+.vc.on{background:linear-gradient(150deg,#FFEAF3,var(--pink));box-shadow:0 3px 0 var(--pink-dk);}
+.vc .cnt{font-size:11px;font-weight:900;background:var(--ink);color:#fff;border-radius:999px;padding:1px 7px;min-width:20px;text-align:center;}
+.vc.on .cnt{background:var(--pink-dk);}
+
+.field{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0;}
+input.tin,textarea.tin{
+  font-family:inherit;font-size:14px;padding:9px 13px;border:2px solid var(--ink);border-radius:12px;
+  background:#fff;color:var(--ink);flex:1;min-width:150px;
+}
+textarea.tin{width:100%;min-height:64px;resize:vertical;line-height:1.5;}
+button.btn{
+  font-family:inherit;font-size:13px;font-weight:800;letter-spacing:.04em;padding:9px 18px;
+  border:2px solid var(--ink);border-radius:999px;cursor:pointer;
+  background:linear-gradient(150deg,#fff,#E4DCEF);box-shadow:0 4px 0 var(--ink);color:var(--ink);
+}
+button.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--ink);}
+button.btn.pk{background:linear-gradient(150deg,#FFEAF3,var(--pink));}
+.hint{font-size:12px;color:#7A7188;margin:6px 0 0;}
+.code-out{
+  font-family:"SF Mono",Menlo,monospace;font-size:13px;padding:11px 14px;border-radius:12px;
+  background:var(--lilac-pale);border:2px dashed var(--lilac);word-break:break-all;margin-top:10px;display:none;
+}
+.tally{margin-top:12px;font-size:13px;}
+.tally .row{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px solid #EEEAF2;}
+.tally .row b{font-weight:800;}
+
+/* ADDRESS */
+.addr{display:flex;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid #EEEAF2;}
+.addr:last-child{border-bottom:none;}
+.addr .an{flex:1;font-size:14px;}
+.addr .an small{display:block;font-size:12px;color:#7A7188;}
+.cbtn{
+  font-family:inherit;font-size:11.5px;font-weight:800;padding:6px 12px;border:2px solid var(--ink);
+  border-radius:999px;background:#fff;cursor:pointer;white-space:nowrap;box-shadow:0 3px 0 var(--lilac-lt);color:var(--ink);
+}
+.cbtn:active{transform:translateY(2px);box-shadow:0 1px 0 var(--lilac-lt);}
+.cbtn.ok{background:linear-gradient(150deg,#DFF3E4,#B9E4C6);}
+
+.foot{text-align:center;margin-top:56px;padding-top:24px;border-top:2px solid var(--ink);font-size:11px;letter-spacing:.22em;color:var(--plum);font-weight:700;}
+@media(max-width:520px){
+  .tm{flex:0 0 46px;font-size:12.5px;}
+  .db{padding:4px 15px 14px;}
+  .dh{padding:14px 15px;}
+  .panel{padding:6px 16px 16px;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="ghost"><div>HONG KONG</div><div>HONG KONG</div><div>HONG KONG</div><div>HONG KONG</div></div>
+    <span class="star s1">✦</span><span class="star s2">✧</span><span class="star s3">✦</span><span class="star s4">✧</span>
+    <div class="hero-in">
+      <h1 class="chrome">Hong<br>Kong</h1>
+      <p class="sub">2026 . 07 . 24 — 07 . 28</p>
+      <p class="sub2">5 DAYS ✦ 4 NIGHTS ✦ 5 PEOPLE</p>
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="#d1">行程</a><a href="#pack">帶什麼</a><a href="#vote">想吃投票</a><a href="#addr">地址</a>
+  </div>
+
+  <div class="info">
+    <div class="ic"><h4>去程 ✦ 7/24 五</h4><div class="big">20:40 台中<br>→ 22:25 香港</div><p>香港快運 UO 1831 ｜ 抵達 T1</p></div>
+    <div class="ic"><h4>回程 ✦ 7/28 二</h4><div class="big">18:15 香港<br>→ 19:55 台中</div><p>香港快運 UO 1821 ｜ <b>T2 出發</b></p></div>
+    <div class="ic"><h4>住宿 ✦ 4 晚</h4><div class="big">銅鑼灣<br>愛麗舍飯店</div><p>高級客房 × 3 間</p></div>
+  </div>
+
+  <div class="tip">
+    ☂ <b>七月是香港雨季，這幾天可能有雷陣雨。</b>雨衣或折傘記得帶，行程臨機應變，不用緊張。冷氣超強，薄外套必備。
+  </div>
+
+  <!-- ITINERARY -->
+  <div class="st" id="d1"><span class="no">✦ 01</span><h2>Itinerary</h2><span class="zh">五天行程</span></div>
+
+  <div class="day">
+    <div class="dh"><div class="dnum">01</div><div><div class="dt">07/24（五）抵達香港</div><div class="zone">深夜到，先睡飽</div></div></div>
+    <div class="db"><ul class="tl">
+      <li><div class="tm">18:40</div><div class="ico">✈</div><div class="wt"><b>台中國際機場集合</b><span class="m">起飛前 2 小時</span></div></li>
+      <li><div class="tm">20:40</div><div class="ico">✈</div><div class="wt"><b>UO 1831 起飛</b></div></li>
+      <li><div class="tm">22:25</div><div class="ico">✈</div><div class="wt"><b>抵達香港 T1</b></div></li>
+      <li><div class="tm">23:00</div><div class="ico">💳</div><div class="wt"><b>入境大堂買八達通</b><span class="m">搭車買東西都靠它</span></div></li>
+      <li><div class="tm">23:30</div><div class="ico">🚌</div><div class="wt"><b>搭 A11 巴士去銅鑼灣</b><span class="m">直達不用轉車，車上有行李架 ｜ 約 70 分鐘</span></div></li>
+      <li><div class="tm">00:40</div><div class="ico">🏨</div><div class="wt"><b>入住 銅鑼灣愛麗舍飯店</b></div></li>
+    </ul></div>
+  </div>
+
+  <div class="day">
+    <div class="dh"><div class="dnum">02</div><div><div class="dt">07/25（六）港島一日</div><div class="zone">中環 → 山頂 → 尖沙咀</div></div></div>
+    <div class="db"><ul class="tl">
+      <li><div class="tm">07:30</div><div class="ico">🍞</div><div class="wt"><b>華嫂冰室</b><span class="m">中環 ｜ 菠蘿包、番茄湯通粉</span></div></li>
+      <li><div class="tm">08:45</div><div class="ico">🚡</div><div class="wt"><b>山頂纜車</b><span class="m">花園道總站</span></div></li>
+      <li><div class="tm">09:15</div><div class="ico">🌇</div><div class="wt"><b>凌霄閣・摩天台 428</b><span class="m">全港最高觀景台</span></div></li>
+      <li><div class="tm">12:00</div><div class="ico">🍜</div><div class="wt"><b>一樂燒鵝</b><span class="m">中環 ｜ 米其林燒鵝飯</span></div></li>
+      <li><div class="tm">13:30</div><div class="ico">📸</div><div class="wt"><b>石板街・半山扶手電梯・嘉咸街壁畫</b><span class="m">三個點走路連著逛</span></div></li>
+      <li><div class="tm">16:00</div><div class="ico">⛴</div><div class="wt"><b>天星小輪過海</b><span class="m">中環 → 尖沙咀</span></div></li>
+      <li><div class="tm">16:30</div><div class="ico">🌊</div><div class="wt"><b>星光大道・維多利亞港</b></div></li>
+      <li><div class="tm">17:45</div><div class="ico">🍪</div><div class="wt"><b>珍妮曲奇</b><span class="m">買伴手禮 ｜ 19:00 關門，別遲到</span></div></li>
+      <li><div class="tm">18:45</div><div class="ico">🍲</div><div class="wt"><b>麥文記麵家</b><span class="m">佐敦 ｜ 雲吞麵</span></div></li>
+      <li><div class="tm">19:40</div><div class="ico">🍞</div><div class="wt"><b>澳洲牛奶公司</b><span class="m">西多士、燉奶</span></div></li>
+      <li><div class="tm">20:20</div><div class="ico">🎆</div><div class="wt"><b>幻彩詠香江</b><span class="m">尖沙咀海濱燈光秀</span></div></li>
+      <li><div class="tm">21:00</div><div class="ico">🍸</div><div class="wt"><b>蘭桂坊</b><span class="m">中環 ｜ 想去再去，累就回飯店</span></div></li>
+    </ul></div>
+  </div>
+
+  <div class="day">
+    <div class="dh"><div class="dnum">03</div><div><div class="dt">07/26（日）九龍一日</div><div class="zone">太子 → 旺角 → 油麻地</div></div></div>
+    <div class="db"><ul class="tl">
+      <li><div class="tm">07:30</div><div class="ico">🍍</div><div class="wt"><b>金華冰廳</b><span class="m">太子 ｜ 菠蘿油</span></div></li>
+      <li><div class="tm">08:45</div><div class="ico">🥣</div><div class="wt"><b>妹記生滾粥品</b><span class="m">旺角花園街街市 3 樓</span></div></li>
+      <li><div class="tm">10:00</div><div class="ico">🐠</div><div class="wt"><b>金魚街</b></div></li>
+      <li><div class="tm">11:00</div><div class="ico">👟</div><div class="wt"><b>波鞋街</b></div></li>
+      <li><div class="tm">12:00</div><div class="ico">🥟</div><div class="wt"><b>一點心</b><span class="m">蝦餃・燒賣・流沙包・腸粉</span></div></li>
+      <li><div class="tm">13:30</div><div class="ico">🥟</div><div class="wt"><b>祥興記生煎包</b><span class="m">一人一顆當點心</span></div></li>
+      <li><div class="tm">14:15</div><div class="ico">🛍</div><div class="wt"><b>西洋菜南街・朗豪坊</b><span class="m">熱的時候躲商場</span></div></li>
+      <li><div class="tm">16:00</div><div class="ico">🛍</div><div class="wt"><b>女人街</b></div></li>
+      <li><div class="tm">18:00</div><div class="ico">🍚</div><div class="wt"><b>興記煲仔飯</b><span class="m">油麻地廟街</span></div></li>
+      <li><div class="tm">19:30</div><div class="ico">🏮</div><div class="wt"><b>廟街夜市</b><span class="m">牛雜・魚蛋・炸大腸・燒蠔</span></div></li>
+    </ul></div>
+  </div>
+
+  <div class="day">
+    <div class="dh"><div class="dnum">04</div><div><div class="dt">07/27（一）迪士尼</div><div class="zone">大嶼山・玩一整天</div></div></div>
+    <div class="db"><ul class="tl">
+      <li><div class="tm">07:30</div><div class="ico">🥑</div><div class="wt"><b>FINERPINT 早午餐</b><span class="m">銅鑼灣 ｜ 藍莓 ricotta toast</span></div></li>
+      <li><div class="tm">09:00</div><div class="ico">🚇</div><div class="wt"><b>出發前往迪士尼</b><span class="m">港鐵約 1 小時</span></div></li>
+      <li><div class="tm">10:00</div><div class="ico">🏰</div><div class="wt"><b>入園</b><span class="m">米奇鬆餅、熱狗堡別忘了吃</span></div></li>
+      <li><div class="tm">晚上</div><div class="ico">🎆</div><div class="wt"><b>城堡煙火</b></div></li>
+      <li><div class="tm">21:30</div><div class="ico">🍲</div><div class="wt"><b>回銅鑼灣・火鍋宵夜</b><span class="m">有力氣再去</span></div></li>
+    </ul></div>
+  </div>
+
+  <div class="day">
+    <div class="dh"><div class="dnum">05</div><div><div class="dt">07/28（二）最後半天</div><div class="zone">上環 → 灣仔 → 機場</div></div></div>
+    <div class="db"><ul class="tl">
+      <li><div class="tm">08:00</div><div class="ico">🧳</div><div class="wt"><b>退房・行李寄放櫃檯</b></div></li>
+      <li><div class="tm">08:30</div><div class="ico">🥟</div><div class="wt"><b>蓮香居 推車點心</b><span class="m">上環 ｜ 老香港早茶</span></div></li>
+      <li><div class="tm">10:15</div><div class="ico">🏮</div><div class="wt"><b>上環散步</b><span class="m">荷李活道・摩羅街・文武廟</span></div></li>
+      <li><div class="tm">11:20</div><div class="ico">🍚</div><div class="wt"><b>發達叉燒</b><span class="m">灣仔 ｜ 滑蛋叉燒飯</span></div></li>
+      <li><div class="tm">12:40</div><div class="ico">🥧</div><div class="wt"><b>Bakehouse 蛋撻</b><span class="m">灣仔 ｜ 買一盒帶上飛機</span></div></li>
+      <li><div class="tm">13:10</div><div class="ico">🧳</div><div class="wt"><b>回飯店拿行李</b></div></li>
+      <li><div class="tm">13:30</div><div class="ico">🚌</div><div class="wt"><b>拿行李、搭 A11 去機場</b><span class="m">坐到最後一站下車</span></div></li>
+      <li><div class="tm">15:00</div><div class="ico">✈</div><div class="wt"><b>抵達機場 T2</b><span class="m">回程在 T2，不是 T1。辦完登機要再搭一段無人列車去 T1 登機，別悠哉</span></div></li>
+      <li><div class="tm">18:15</div><div class="ico">✈</div><div class="wt"><b>UO 1821 起飛 → 19:55 到台中</b></div></li>
+    </ul></div>
+  </div>
+
+  <!-- PACKING -->
+  <div class="st" id="pack"><span class="no">✦ 02</span><h2>Packing</h2><span class="zh">帶什麼 ｜ 打勾會自動存在你手機</span></div>
+  <div class="panel">
+    <h3>❶ 沒帶就上不了飛機</h3>
+    <div id="p1"></div>
+    <h3>❷ 香港特有，很多人會忘</h3>
+    <div id="p2"></div>
+    <h3>❸ 七月天氣裝備</h3>
+    <div id="p3"></div>
+    <h3>❹ 一般隨身</h3>
+    <div id="p4"></div>
+    <div class="field" style="margin-top:16px;">
+      <button class="btn" onclick="resetPack()">清空重來</button>
+      <span class="hint" id="packStat"></span>
+    </div>
+  </div>
+
+  <!-- VOTE -->
+  <div class="st" id="vote"><span class="no">✦ 03</span><h2>Vote</h2><span class="zh">想吃投票 ｜ 選完產生代碼貼到群組</span></div>
+  <div class="panel">
+    <div class="field">
+      <input class="tin" id="myName" placeholder="先打上你的名字" maxlength="6">
+      <button class="btn" onclick="saveName()">確認</button>
+    </div>
+    <p class="hint" id="nameStat">還沒填名字。填了才能產生投票碼。</p>
+
+    <h3>點下去 = 我想吃</h3>
+    <div class="vote" id="voteBox"></div>
+
+    <div class="field" style="margin-top:14px;">
+      <button class="btn pk" onclick="genCode()">產生我的投票碼</button>
+      <button class="btn" onclick="copyCode()">複製</button>
+    </div>
+    <div class="code-out" id="codeOut"></div>
+    <p class="hint">把這串貼到群組，其他人貼進下面的框，就能看到大家的票。</p>
+
+    <h3>貼上別人的投票碼</h3>
+    <textarea class="tin" id="pasteBox" placeholder="一行一個人的代碼，可以貼很多行"></textarea>
+    <div class="field">
+      <button class="btn" onclick="mergeCodes()">合併統計</button>
+      <button class="btn" onclick="clearTally()">清空統計</button>
+    </div>
+    <div class="tally" id="tally"></div>
+  </div>
+
+  <!-- ADDRESS -->
+  <div class="st" id="addr"><span class="no">✦ 04</span><h2>Address</h2><span class="zh">給司機看 ｜ 按一下複製中文地址</span></div>
+  <div class="panel" id="addrBox"></div>
+
+  <div class="foot">✦ HONG KONG 2026 ✦ 玩得開心 ✦</div>
+</div>
+
+<script>
+/* ---------- 打包清單 ---------- */
+const PACK = {
+  p1:[
+    ["護照","效期要 6 個月以上（2027/01/28 之後才到期）"],
+    ["電子機票","截圖存手機，別只靠網路"],
+    ["飯店訂房確認信","深夜 check-in 用得到"],
+    ["台灣人去香港免簽","不用辦簽證，但護照一定要帶"]
+  ],
+  p2:[
+    ["英規三孔轉接頭","香港插座是英式三孔，台灣插頭插不進去！"],
+    ["港幣現金","茶餐廳、街市、廟街多數只收現金"],
+    ["八達通","到了機場就能買，搭車買東西都靠它"],
+    ["行動電源","一定要隨身，不能托運"]
+  ],
+  p3:[
+    ["輕便雨衣","比雨傘好用，香港常有強風"],
+    ["折疊傘",""],
+    ["防曬乳","七月紫外線很強"],
+    ["薄外套","室內冷氣超強，會冷"],
+    ["好走的鞋","這幾天走路量很大"],
+    ["多帶一套換洗衣物","可能會淋濕"]
+  ],
+  p4:[
+    ["常備藥","腸胃藥、頭痛藥、暈車藥"],
+    ["環保袋","香港塑膠袋要收費"],
+    ["濕紙巾・面紙",""],
+    ["空的行李空間","伴手禮會買很多"]
+  ]
+};
+function buildPack(){
+  const saved=JSON.parse(localStorage.getItem('hk_pack')||'{}');
+  Object.keys(PACK).forEach(k=>{
+    const el=document.getElementById(k); el.innerHTML='';
+    PACK[k].forEach((it,i)=>{
+      const id=k+'_'+i;
+      const d=document.createElement('div');
+      d.className='chk'+(saved[id]?' done':'');
+      d.innerHTML='<div class="box"></div><div class="lbl">'+it[0]+(it[1]?'<small>'+it[1]+'</small>':'')+'</div>';
+      d.onclick=()=>{d.classList.toggle('done');const s=JSON.parse(localStorage.getItem('hk_pack')||'{}');s[id]=d.classList.contains('done');localStorage.setItem('hk_pack',JSON.stringify(s));packStat();};
+      el.appendChild(d);
+    });
+  });
+  packStat();
+}
+function packStat(){
+  const s=JSON.parse(localStorage.getItem('hk_pack')||'{}');
+  let total=0;Object.keys(PACK).forEach(k=>total+=PACK[k].length);
+  const done=Object.values(s).filter(Boolean).length;
+  document.getElementById('packStat').textContent='已打勾 '+done+' / '+total+(done===total?'　✦ 全部搞定！':'');
+}
+function resetPack(){localStorage.removeItem('hk_pack');buildPack();}
+
+/* ---------- 想吃投票 ---------- */
+const FOODS=["一樂燒鵝","華嫂冰室","澳洲牛奶公司","麥文記雲吞麵","金華冰廳菠蘿油","妹記生滾粥品","一點心","祥興記生煎包","興記煲仔飯","廟街小吃","蓮香居早茶","發達叉燒","Bakehouse 蛋撻","Hashtag B 蛋撻","FINERPINT","火鍋（銅鑼灣）","福元湯圓","富豪雪糕"];
+function buildVote(){
+  const mine=JSON.parse(localStorage.getItem('hk_myvote')||'[]');
+  const box=document.getElementById('voteBox');box.innerHTML='';
+  FOODS.forEach((f,i)=>{
+    const b=document.createElement('div');
+    b.className='vc'+(mine.includes(i)?' on':'');
+    b.innerHTML='<span>'+f+'</span><span class="cnt" id="cnt'+i+'">0</span>';
+    b.onclick=()=>{
+      let m=JSON.parse(localStorage.getItem('hk_myvote')||'[]');
+      if(m.includes(i)){m=m.filter(x=>x!==i);b.classList.remove('on');}else{m.push(i);b.classList.add('on');}
+      localStorage.setItem('hk_myvote',JSON.stringify(m));
+    };
+    box.appendChild(b);
+  });
+  renderTally();
+}
+function saveName(){
+  const n=document.getElementById('myName').value.trim();
+  if(!n){document.getElementById('nameStat').textContent='還沒填名字。填了才能產生投票碼。';return;}
+  localStorage.setItem('hk_name',n);
+  document.getElementById('nameStat').textContent='✦ 你是「'+n+'」，可以開始投票了。';
+}
+function genCode(){
+  const n=localStorage.getItem('hk_name');
+  if(!n){alert('先填名字再產生代碼');return;}
+  const m=JSON.parse(localStorage.getItem('hk_myvote')||'[]');
+  if(!m.length){alert('還沒選任何一家');return;}
+  const code='HK|'+n+'|'+m.sort((a,b)=>a-b).join(',');
+  const o=document.getElementById('codeOut');o.style.display='block';o.textContent=code;
+  mergeOne(code);renderTally();
+}
+function copyCode(){
+  const t=document.getElementById('codeOut').textContent;
+  if(!t){alert('先按「產生我的投票碼」');return;}
+  navigator.clipboard.writeText(t).then(()=>alert('已複製，貼到群組吧'),()=>alert('複製失敗，長按上面文字手動複製'));
+}
+function mergeOne(code){
+  const p=code.trim().split('|');
+  if(p.length!==3||p[0]!=='HK')return false;
+  const all=JSON.parse(localStorage.getItem('hk_tally')||'{}');
+  all[p[1]]=p[2].split(',').map(Number).filter(x=>!isNaN(x));
+  localStorage.setItem('hk_tally',JSON.stringify(all));
+  return true;
+}
+function mergeCodes(){
+  const lines=document.getElementById('pasteBox').value.split('\n');
+  let ok=0;lines.forEach(l=>{if(l.trim()&&mergeOne(l))ok++;});
+  renderTally();
+  document.getElementById('pasteBox').value='';
+  alert(ok?('合併了 '+ok+' 個人的票'):'沒有讀到有效的代碼');
+}
+function clearTally(){localStorage.removeItem('hk_tally');renderTally();}
+function renderTally(){
+  const all=JSON.parse(localStorage.getItem('hk_tally')||'{}');
+  const names=Object.keys(all);
+  const counts=FOODS.map(()=>0);
+  names.forEach(n=>all[n].forEach(i=>{if(counts[i]!==undefined)counts[i]++;}));
+  FOODS.forEach((f,i)=>{const e=document.getElementById('cnt'+i);if(e)e.textContent=counts[i];});
+  const t=document.getElementById('tally');
+  if(!names.length){t.innerHTML='<p class="hint">還沒有任何統計。自己按「產生投票碼」，或貼上別人的代碼。</p>';return;}
+  const order=FOODS.map((f,i)=>({f,c:counts[i]})).sort((a,b)=>b.c-a.c);
+  t.innerHTML='<p class="hint">目前有 '+names.length+' 人投票：'+names.join('、')+'</p>'+
+    order.map(o=>'<div class="row"><span>'+o.f+'</span><b>'+'♥'.repeat(o.c)+' '+o.c+'</b></div>').join('');
+}
+
+/* ---------- 地址 ---------- */
+const ADDR=[
+  ["銅鑼灣愛麗舍飯店","Elysion Place Hotel Causeway Bay","香港銅鑼灣愛麗舍酒店"],
+  ["一樂燒鵝","中環士丹利街","香港中環士丹利街 34-38 號"],
+  ["澳洲牛奶公司","佐敦白加士街","香港佐敦白加士街 47-49 號"],
+  ["麥文記麵家","佐敦白加士街","香港佐敦白加士街 51 號"],
+  ["珍妮曲奇","尖沙咀美麗都大廈","香港尖沙咀彌敦道 54-64 號美麗都大廈 1 樓 42 號舖"],
+  ["金華冰廳","太子弼街","香港太子弼街 47 號"],
+  ["妹記生滾粥品","旺角花園街街市","香港旺角花園街 123A 號花園街市政大廈 3 樓熟食中心"],
+  ["興記煲仔飯","油麻地廟街","香港油麻地廟街 19 號"],
+  ["發達叉燒","灣仔蘭杜街","香港灣仔蘭杜街麗都大廈"],
+  ["Bakehouse","灣仔大王東街","香港灣仔大王東街 14 號"],
+  ["Hashtag B","銅鑼灣利園山道","香港銅鑼灣利園山道 67 號寶榮大廈地下 F 舖"],
+  ["福元湯圓","北角炮台山","香港北角炮台山福元街 7 號利都樓地下 1-1 舖"]
+];
+function buildAddr(){
+  const box=document.getElementById('addrBox');box.innerHTML='';
+  ADDR.forEach((a,i)=>{
+    const d=document.createElement('div');d.className='addr';
+    d.innerHTML='<div class="an">'+a[0]+'<small>'+a[1]+'</small></div>';
+    const b=document.createElement('button');b.className='cbtn';b.textContent='複製地址';
+    b.onclick=()=>{navigator.clipboard.writeText(a[2]).then(()=>{b.textContent='✓ 已複製';b.classList.add('ok');setTimeout(()=>{b.textContent='複製地址';b.classList.remove('ok');},1600);},()=>alert(a[2]));};
+    d.appendChild(b);box.appendChild(d);
+  });
+}
+
+/* init */
+buildPack();buildVote();buildAddr();
+const sn=localStorage.getItem('hk_name');
+if(sn){document.getElementById('myName').value=sn;document.getElementById('nameStat').textContent='✦ 你是「'+sn+'」，可以開始投票了。';}
+</script>
+</body>
+</html>
