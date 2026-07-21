@@ -10,8 +10,6 @@
   --plum:#5E4880; --ink:#1C1720; --pink:#F0A6C9; --pink-dk:#D9749F;
 }
 *{box-sizing:border-box;}
-/* 刻意只做一套配色：Y2K 奶油淡紫。鎖定淺色，避免深色模式的
-   瀏覽器預設樣式蓋掉輸入框。 */
 :root{color-scheme:light;}
 html{scroll-behavior:smooth;background:var(--paper);}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
@@ -97,6 +95,12 @@ body{
 .tm{flex:0 0 54px;font-family:"Helvetica Neue",Helvetica,sans-serif;font-weight:800;font-size:13.5px;color:var(--plum);padding-top:2px;}
 .wt{flex:1;min-width:0;}
 .wt b{font-size:15.5px;font-weight:700;}
+a.mapl{text-decoration:none;color:inherit;display:inline-flex;align-items:baseline;gap:5px;
+  border-radius:8px;padding:1px 5px;margin-left:-5px;transition:background .16s;}
+a.mapl:hover,a.mapl:focus-visible{background:var(--lilac-pale);}
+a.mapl .pin{font-size:11.5px;opacity:.5;transition:opacity .16s;}
+a.mapl:hover .pin,a.mapl:focus-visible .pin{opacity:1;}
+a.cbtn.map{text-decoration:none;display:inline-block;line-height:1.5;}
 .wt .m{display:block;font-size:12.5px;color:#7A7188;margin-top:1px;}
 .ico{flex:0 0 22px;font-size:15px;padding-top:1px;text-align:center;}
 
@@ -209,55 +213,55 @@ button.btn.pk{background:linear-gradient(150deg,#FFEAF3,var(--pink));}
   <div class="day">
     <div class="dh"><div class="dnum">01</div><div><div class="dt">07/24（五）抵達香港</div><div class="zone">深夜到，先睡飽</div></div></div>
     <div class="db"><ul class="tl">
-      <li><div class="tm">18:40</div><div class="ico">✈</div><div class="wt"><b>台中國際機場集合</b><span class="m">起飛前 2 小時</span></div></li>
+      <li><div class="tm">18:40</div><div class="ico">✈</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E8%87%BA%E4%B8%AD%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4" target="_blank" rel="noopener"><b>台中國際機場集合</b><span class="pin">📍</span></a><span class="m">起飛前 2 小時</span></div></li>
       <li><div class="tm">20:40</div><div class="ico">✈</div><div class="wt"><b>UO 1831 起飛</b></div></li>
-      <li><div class="tm">22:25</div><div class="ico">✈</div><div class="wt"><b>抵達香港 T1</b></div></li>
+      <li><div class="tm">22:25</div><div class="ico">✈</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E9%A6%99%E6%B8%AF%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4%20%E4%B8%80%E8%99%9F%E5%AE%A2%E9%81%8B%E5%A4%A7%E6%A8%93" target="_blank" rel="noopener"><b>抵達香港 T1</b><span class="pin">📍</span></a></div></li>
       <li><div class="tm">23:00</div><div class="ico">💳</div><div class="wt"><b>入境大堂買八達通</b><span class="m">搭車買東西都靠它</span></div></li>
       <li><div class="tm">23:30</div><div class="ico">🚌</div><div class="wt"><b>搭 A11 巴士去銅鑼灣</b><span class="m">直達不用轉車，車上有行李架 ｜ 約 70 分鐘</span></div></li>
-      <li><div class="tm">00:40</div><div class="ico">🏨</div><div class="wt"><b>入住 銅鑼灣愛麗舍飯店</b></div></li>
+      <li><div class="tm">00:40</div><div class="ico">🏨</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=Elysion%20Place%20Hotel%20Causeway%20Bay%20%E9%A6%99%E6%B8%AF%E9%8A%85%E9%91%BC%E7%81%A3" target="_blank" rel="noopener"><b>入住 銅鑼灣愛麗舍飯店</b><span class="pin">📍</span></a></div></li>
     </ul></div>
   </div>
 
   <div class="day">
     <div class="dh"><div class="dnum">02</div><div><div class="dt">07/25（六）港島一日</div><div class="zone">中環 → 山頂 → 尖沙咀</div></div></div>
     <div class="db"><ul class="tl">
-      <li><div class="tm">07:30</div><div class="ico">🍞</div><div class="wt"><b>華嫂冰室</b><span class="m">中環 ｜ 菠蘿包、番茄湯通粉</span></div></li>
-      <li><div class="tm">08:45</div><div class="ico">🚡</div><div class="wt"><b>山頂纜車</b><span class="m">花園道總站</span></div></li>
-      <li><div class="tm">09:15</div><div class="ico">🌇</div><div class="wt"><b>凌霄閣・摩天台 428</b><span class="m">全港最高觀景台</span></div></li>
-      <li><div class="tm">12:00</div><div class="ico">🍜</div><div class="wt"><b>一樂燒鵝</b><span class="m">中環 ｜ 米其林燒鵝飯</span></div></li>
-      <li><div class="tm">13:30</div><div class="ico">📸</div><div class="wt"><b>石板街・半山扶手電梯・嘉咸街壁畫</b><span class="m">三個點走路連著逛</span></div></li>
-      <li><div class="tm">16:00</div><div class="ico">⛴</div><div class="wt"><b>天星小輪過海</b><span class="m">中環 → 尖沙咀</span></div></li>
-      <li><div class="tm">16:30</div><div class="ico">🌊</div><div class="wt"><b>星光大道・維多利亞港</b></div></li>
-      <li><div class="tm">17:45</div><div class="ico">🍪</div><div class="wt"><b>珍妮曲奇</b><span class="m">買伴手禮 ｜ 19:00 關門，別遲到</span></div></li>
-      <li><div class="tm">18:45</div><div class="ico">🍲</div><div class="wt"><b>麥文記麵家</b><span class="m">佐敦 ｜ 雲吞麵</span></div></li>
-      <li><div class="tm">19:40</div><div class="ico">🍞</div><div class="wt"><b>澳洲牛奶公司</b><span class="m">西多士、燉奶</span></div></li>
-      <li><div class="tm">20:20</div><div class="ico">🎆</div><div class="wt"><b>幻彩詠香江</b><span class="m">尖沙咀海濱燈光秀</span></div></li>
-      <li><div class="tm">21:00</div><div class="ico">🍸</div><div class="wt"><b>蘭桂坊</b><span class="m">中環 ｜ 想去再去，累就回飯店</span></div></li>
+      <li><div class="tm">07:30</div><div class="ico">🍞</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E8%8F%AF%E5%AB%82%E5%86%B0%E5%AE%A4%20%E4%B8%AD%E7%92%B0%20%E5%9C%8B%E9%9A%9B%E9%87%91%E8%9E%8D%E4%B8%AD%E5%BF%83" target="_blank" rel="noopener"><b>華嫂冰室</b><span class="pin">📍</span></a><span class="m">中環 ｜ 菠蘿包、番茄湯通粉</span></div></li>
+      <li><div class="tm">08:45</div><div class="ico">🚡</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E5%B1%B1%E9%A0%82%E7%BA%9C%E8%BB%8A%E8%8A%B1%E5%9C%92%E9%81%93%E7%B8%BD%E7%AB%99%20%E9%A6%99%E6%B8%AF" target="_blank" rel="noopener"><b>山頂纜車</b><span class="pin">📍</span></a><span class="m">花園道總站</span></div></li>
+      <li><div class="tm">09:15</div><div class="ico">🌇</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E5%87%8C%E9%9C%84%E9%96%A3%20%E6%91%A9%E5%A4%A9%E5%8F%B0428%20%E9%A6%99%E6%B8%AF%E5%A4%AA%E5%B9%B3%E5%B1%B1%E9%A0%82" target="_blank" rel="noopener"><b>凌霄閣・摩天台 428</b><span class="pin">📍</span></a><span class="m">全港最高觀景台</span></div></li>
+      <li><div class="tm">12:00</div><div class="ico">🍜</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%80%E6%A8%82%E7%87%92%E9%B5%9D%20%E4%B8%AD%E7%92%B0%E5%A3%AB%E4%B8%B9%E5%88%A9%E8%A1%97" target="_blank" rel="noopener"><b>一樂燒鵝</b><span class="pin">📍</span></a><span class="m">中環 ｜ 米其林燒鵝飯</span></div></li>
+      <li><div class="tm">13:30</div><div class="ico">📸</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E7%A0%B5%E5%85%B8%E4%B9%8D%E8%A1%97%20%E7%9F%B3%E6%9D%BF%E8%A1%97%20%E9%A6%99%E6%B8%AF%E4%B8%AD%E7%92%B0" target="_blank" rel="noopener"><b>石板街・半山扶手電梯・嘉咸街壁畫</b><span class="pin">📍</span></a><span class="m">三個點走路連著逛</span></div></li>
+      <li><div class="tm">16:00</div><div class="ico">⛴</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E7%92%B0%E5%A4%A9%E6%98%9F%E7%A2%BC%E9%A0%AD%20%E9%A6%99%E6%B8%AF" target="_blank" rel="noopener"><b>天星小輪過海</b><span class="pin">📍</span></a><span class="m">中環 → 尖沙咀</span></div></li>
+      <li><div class="tm">16:30</div><div class="ico">🌊</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E6%98%9F%E5%85%89%E5%A4%A7%E9%81%93%20%E9%A6%99%E6%B8%AF%E5%B0%96%E6%B2%99%E5%92%80" target="_blank" rel="noopener"><b>星光大道・維多利亞港</b><span class="pin">📍</span></a></div></li>
+      <li><div class="tm">17:45</div><div class="ico">🍪</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E7%8F%8D%E5%A6%AE%E6%9B%B2%E5%A5%87%20%E5%B0%96%E6%B2%99%E5%92%80%20%E7%BE%8E%E9%BA%97%E9%83%BD%E5%A4%A7%E5%BB%88" target="_blank" rel="noopener"><b>珍妮曲奇</b><span class="pin">📍</span></a><span class="m">買伴手禮 ｜ 19:00 關門，別遲到</span></div></li>
+      <li><div class="tm">18:45</div><div class="ico">🍲</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E9%BA%A5%E6%96%87%E8%A8%98%E9%BA%B5%E5%AE%B6%20%E4%BD%90%E6%95%A6%E7%99%BD%E5%8A%A0%E5%A3%AB%E8%A1%97" target="_blank" rel="noopener"><b>麥文記麵家</b><span class="pin">📍</span></a><span class="m">佐敦 ｜ 雲吞麵</span></div></li>
+      <li><div class="tm">19:40</div><div class="ico">🍞</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E6%BE%B3%E6%B4%B2%E7%89%9B%E5%A5%B6%E5%85%AC%E5%8F%B8%20%E4%BD%90%E6%95%A6%E7%99%BD%E5%8A%A0%E5%A3%AB%E8%A1%97" target="_blank" rel="noopener"><b>澳洲牛奶公司</b><span class="pin">📍</span></a><span class="m">西多士、燉奶</span></div></li>
+      <li><div class="tm">20:20</div><div class="ico">🎆</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E5%B0%96%E6%B2%99%E5%92%80%E6%B5%B7%E6%BF%B1%E9%95%B7%E5%BB%8A%20%E9%A6%99%E6%B8%AF" target="_blank" rel="noopener"><b>幻彩詠香江</b><span class="pin">📍</span></a><span class="m">尖沙咀海濱燈光秀</span></div></li>
+      <li><div class="tm">21:00</div><div class="ico">🍸</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E8%98%AD%E6%A1%82%E5%9D%8A%20%E9%A6%99%E6%B8%AF%E4%B8%AD%E7%92%B0" target="_blank" rel="noopener"><b>蘭桂坊</b><span class="pin">📍</span></a><span class="m">中環 ｜ 想去再去，累就回飯店</span></div></li>
     </ul></div>
   </div>
 
   <div class="day">
     <div class="dh"><div class="dnum">03</div><div><div class="dt">07/26（日）九龍一日</div><div class="zone">太子 → 旺角 → 油麻地</div></div></div>
     <div class="db"><ul class="tl">
-      <li><div class="tm">07:30</div><div class="ico">🍍</div><div class="wt"><b>金華冰廳</b><span class="m">太子 ｜ 菠蘿油</span></div></li>
-      <li><div class="tm">08:45</div><div class="ico">🥣</div><div class="wt"><b>妹記生滾粥品</b><span class="m">旺角花園街街市 3 樓</span></div></li>
-      <li><div class="tm">10:00</div><div class="ico">🐠</div><div class="wt"><b>金魚街</b></div></li>
-      <li><div class="tm">11:00</div><div class="ico">👟</div><div class="wt"><b>波鞋街</b></div></li>
-      <li><div class="tm">12:00</div><div class="ico">🥟</div><div class="wt"><b>一點心</b><span class="m">蝦餃・燒賣・流沙包・腸粉</span></div></li>
-      <li><div class="tm">13:30</div><div class="ico">🥟</div><div class="wt"><b>祥興記生煎包</b><span class="m">一人一顆當點心</span></div></li>
-      <li><div class="tm">14:15</div><div class="ico">🛍</div><div class="wt"><b>西洋菜南街・朗豪坊</b><span class="m">熱的時候躲商場</span></div></li>
-      <li><div class="tm">16:00</div><div class="ico">🛍</div><div class="wt"><b>女人街</b></div></li>
-      <li><div class="tm">18:00</div><div class="ico">🍚</div><div class="wt"><b>興記煲仔飯</b><span class="m">油麻地廟街</span></div></li>
-      <li><div class="tm">19:30</div><div class="ico">🏮</div><div class="wt"><b>廟街夜市</b><span class="m">牛雜・魚蛋・炸大腸・燒蠔</span></div></li>
+      <li><div class="tm">07:30</div><div class="ico">🍍</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E9%87%91%E8%8F%AF%E5%86%B0%E5%BB%B3%20%E5%A4%AA%E5%AD%90%E5%BC%BC%E8%A1%97" target="_blank" rel="noopener"><b>金華冰廳</b><span class="pin">📍</span></a><span class="m">太子 ｜ 菠蘿油</span></div></li>
+      <li><div class="tm">08:45</div><div class="ico">🥣</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E5%A6%B9%E8%A8%98%E7%94%9F%E6%BB%BE%E7%B2%A5%E5%93%81%20%E6%97%BA%E8%A7%92%E8%8A%B1%E5%9C%92%E8%A1%97%E8%A1%97%E5%B8%82" target="_blank" rel="noopener"><b>妹記生滾粥品</b><span class="pin">📍</span></a><span class="m">旺角花園街街市 3 樓</span></div></li>
+      <li><div class="tm">10:00</div><div class="ico">🐠</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E9%87%91%E9%AD%9A%E8%A1%97%20%E9%80%9A%E8%8F%9C%E8%A1%97%20%E9%A6%99%E6%B8%AF%E6%97%BA%E8%A7%92" target="_blank" rel="noopener"><b>金魚街</b><span class="pin">📍</span></a></div></li>
+      <li><div class="tm">11:00</div><div class="ico">👟</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E6%B3%A2%E9%9E%8B%E8%A1%97%20%E8%8A%B1%E5%9C%92%E8%A1%97%20%E9%A6%99%E6%B8%AF%E6%97%BA%E8%A7%92" target="_blank" rel="noopener"><b>波鞋街</b><span class="pin">📍</span></a></div></li>
+      <li><div class="tm">12:00</div><div class="ico">🥟</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%80%E9%BB%9E%E5%BF%83%20%E6%97%BA%E8%A7%92" target="_blank" rel="noopener"><b>一點心</b><span class="pin">📍</span></a><span class="m">蝦餃・燒賣・流沙包・腸粉</span></div></li>
+      <li><div class="tm">13:30</div><div class="ico">🥟</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E7%A5%A5%E8%88%88%E8%A8%98%E4%B8%8A%E6%B5%B7%E7%94%9F%E7%85%8E%E5%8C%85%20%E6%97%BA%E8%A7%92" target="_blank" rel="noopener"><b>祥興記生煎包</b><span class="pin">📍</span></a><span class="m">一人一顆當點心</span></div></li>
+      <li><div class="tm">14:15</div><div class="ico">🛍</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E6%9C%97%E8%B1%AA%E5%9D%8A%20%E9%A6%99%E6%B8%AF%E6%97%BA%E8%A7%92" target="_blank" rel="noopener"><b>西洋菜南街・朗豪坊</b><span class="pin">📍</span></a><span class="m">熱的時候躲商場</span></div></li>
+      <li><div class="tm">16:00</div><div class="ico">🛍</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E5%A5%B3%E4%BA%BA%E8%A1%97%20%E9%80%9A%E8%8F%9C%E8%A1%97%20%E9%A6%99%E6%B8%AF%E6%97%BA%E8%A7%92" target="_blank" rel="noopener"><b>女人街</b><span class="pin">📍</span></a></div></li>
+      <li><div class="tm">18:00</div><div class="ico">🍚</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E8%88%88%E8%A8%98%E7%85%B2%E4%BB%94%E9%A3%AF%20%E6%B2%B9%E9%BA%BB%E5%9C%B0%E5%BB%9F%E8%A1%97" target="_blank" rel="noopener"><b>興記煲仔飯</b><span class="pin">📍</span></a><span class="m">油麻地廟街</span></div></li>
+      <li><div class="tm">19:30</div><div class="ico">🏮</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E5%BB%9F%E8%A1%97%20%E9%A6%99%E6%B8%AF%E6%B2%B9%E9%BA%BB%E5%9C%B0" target="_blank" rel="noopener"><b>廟街夜市</b><span class="pin">📍</span></a><span class="m">牛雜・魚蛋・炸大腸・燒蠔</span></div></li>
     </ul></div>
   </div>
 
   <div class="day">
     <div class="dh"><div class="dnum">04</div><div><div class="dt">07/27（一）迪士尼</div><div class="zone">大嶼山・玩一整天</div></div></div>
     <div class="db"><ul class="tl">
-      <li><div class="tm">07:30</div><div class="ico">🥑</div><div class="wt"><b>FINERPINT 早午餐</b><span class="m">銅鑼灣 ｜ 藍莓 ricotta toast</span></div></li>
+      <li><div class="tm">07:30</div><div class="ico">🥑</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=Fineprint%20%E9%8A%85%E9%91%BC%E7%81%A3" target="_blank" rel="noopener"><b>FINERPINT 早午餐</b><span class="pin">📍</span></a><span class="m">銅鑼灣 ｜ 藍莓 ricotta toast</span></div></li>
       <li><div class="tm">09:00</div><div class="ico">🚇</div><div class="wt"><b>出發前往迪士尼</b><span class="m">港鐵約 1 小時</span></div></li>
-      <li><div class="tm">10:00</div><div class="ico">🏰</div><div class="wt"><b>入園</b><span class="m">米奇鬆餅、熱狗堡別忘了吃</span></div></li>
+      <li><div class="tm">10:00</div><div class="ico">🏰</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E9%A6%99%E6%B8%AF%E8%BF%AA%E5%A3%AB%E5%B0%BC%E6%A8%82%E5%9C%92" target="_blank" rel="noopener"><b>入園</b><span class="pin">📍</span></a><span class="m">米奇鬆餅、熱狗堡別忘了吃</span></div></li>
       <li><div class="tm">晚上</div><div class="ico">🎆</div><div class="wt"><b>城堡煙火</b></div></li>
       <li><div class="tm">21:30</div><div class="ico">🍲</div><div class="wt"><b>回銅鑼灣・火鍋宵夜</b><span class="m">有力氣再去</span></div></li>
     </ul></div>
@@ -267,13 +271,13 @@ button.btn.pk{background:linear-gradient(150deg,#FFEAF3,var(--pink));}
     <div class="dh"><div class="dnum">05</div><div><div class="dt">07/28（二）最後半天</div><div class="zone">上環 → 灣仔 → 機場</div></div></div>
     <div class="db"><ul class="tl">
       <li><div class="tm">08:00</div><div class="ico">🧳</div><div class="wt"><b>退房・行李寄放櫃檯</b></div></li>
-      <li><div class="tm">08:30</div><div class="ico">🥟</div><div class="wt"><b>蓮香居 推車點心</b><span class="m">上環 ｜ 老香港早茶</span></div></li>
-      <li><div class="tm">10:15</div><div class="ico">🏮</div><div class="wt"><b>上環散步</b><span class="m">荷李活道・摩羅街・文武廟</span></div></li>
-      <li><div class="tm">11:20</div><div class="ico">🍚</div><div class="wt"><b>發達叉燒</b><span class="m">灣仔 ｜ 滑蛋叉燒飯</span></div></li>
-      <li><div class="tm">12:40</div><div class="ico">🥧</div><div class="wt"><b>Bakehouse 蛋撻</b><span class="m">灣仔 ｜ 買一盒帶上飛機</span></div></li>
+      <li><div class="tm">08:30</div><div class="ico">🥟</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E8%93%AE%E9%A6%99%E5%B1%85%20%E9%A6%99%E6%B8%AF%E4%B8%8A%E7%92%B0" target="_blank" rel="noopener"><b>蓮香居 推車點心</b><span class="pin">📍</span></a><span class="m">上環 ｜ 老香港早茶</span></div></li>
+      <li><div class="tm">10:15</div><div class="ico">🏮</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E6%96%87%E6%AD%A6%E5%BB%9F%20%E9%A6%99%E6%B8%AF%E4%B8%8A%E7%92%B0%E8%8D%B7%E6%9D%8E%E6%B4%BB%E9%81%93" target="_blank" rel="noopener"><b>上環散步</b><span class="pin">📍</span></a><span class="m">荷李活道・摩羅街・文武廟</span></div></li>
+      <li><div class="tm">11:20</div><div class="ico">🍚</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E7%99%BC%E9%81%94%E5%8F%89%E7%87%92%20%E9%A6%99%E6%B8%AF%E7%81%A3%E4%BB%94%E8%98%AD%E6%9D%9C%E8%A1%97" target="_blank" rel="noopener"><b>發達叉燒</b><span class="pin">📍</span></a><span class="m">灣仔 ｜ 滑蛋叉燒飯</span></div></li>
+      <li><div class="tm">12:40</div><div class="ico">🥧</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=Bakehouse%20%E9%A6%99%E6%B8%AF%E7%81%A3%E4%BB%94%E5%A4%A7%E7%8E%8B%E6%9D%B1%E8%A1%97" target="_blank" rel="noopener"><b>Bakehouse 蛋撻</b><span class="pin">📍</span></a><span class="m">灣仔 ｜ 買一盒帶上飛機</span></div></li>
       <li><div class="tm">13:10</div><div class="ico">🧳</div><div class="wt"><b>回飯店拿行李</b></div></li>
       <li><div class="tm">13:30</div><div class="ico">🚌</div><div class="wt"><b>拿行李、搭 A11 去機場</b><span class="m">坐到最後一站下車</span></div></li>
-      <li><div class="tm">15:00</div><div class="ico">✈</div><div class="wt"><b>抵達機場 T2</b><span class="m">回程在 T2，不是 T1。辦完登機要再搭一段無人列車去 T1 登機，別悠哉</span></div></li>
+      <li><div class="tm">15:00</div><div class="ico">✈</div><div class="wt"><a class="mapl" href="https://www.google.com/maps/search/?api=1&query=%E9%A6%99%E6%B8%AF%E5%9C%8B%E9%9A%9B%E6%A9%9F%E5%A0%B4%20%E4%BA%8C%E8%99%9F%E5%AE%A2%E9%81%8B%E5%A4%A7%E6%A8%93" target="_blank" rel="noopener"><b>抵達機場 T2</b><span class="pin">📍</span></a><span class="m">回程在 T2，不是 T1。辦完登機要再搭一段無人列車去 T1 登機，別悠哉</span></div></li>
       <li><div class="tm">18:15</div><div class="ico">✈</div><div class="wt"><b>UO 1821 起飛 → 19:55 到台中</b></div></li>
     </ul></div>
   </div>
@@ -470,6 +474,9 @@ function buildAddr(){
   ADDR.forEach((a,i)=>{
     const d=document.createElement('div');d.className='addr';
     d.innerHTML='<div class="an">'+a[0]+'<small>'+a[1]+'</small></div>';
+    const g=document.createElement('a');g.className='cbtn map';g.target='_blank';g.rel='noopener';
+    g.href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(a[3]||a[2]);
+    g.textContent='📍 地圖';d.appendChild(g);
     const b=document.createElement('button');b.className='cbtn';b.textContent='複製地址';
     b.onclick=()=>{navigator.clipboard.writeText(a[2]).then(()=>{b.textContent='✓ 已複製';b.classList.add('ok');setTimeout(()=>{b.textContent='複製地址';b.classList.remove('ok');},1600);},()=>alert(a[2]));};
     d.appendChild(b);box.appendChild(d);
